@@ -1,0 +1,1701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Saleve Office & Promo LLC — Government Supply Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --navy: #0D1F3C;
+    --cobalt: #1B4FD8;
+    --cobalt-light: #2D65F0;
+    --cobalt-pale: #EEF3FF;
+    --cobalt-mid: #3B5FC0;
+    --charcoal: #1C1C1E;
+    --steel: #6B7280;
+    --pale-blue: #EEF3FF;
+    --off-white: #F7F8FA;
+    --white: #ffffff;
+    --gold: #C9A84C;
+    --gold-light: #F5E6C0;
+    --success: #16A34A;
+    --border: rgba(27,79,216,0.15);
+    --border-strong: rgba(27,79,216,0.3);
+    --font-display: 'Barlow Condensed', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--white);
+    color: var(--charcoal);
+    overflow-x: hidden;
+  }
+
+  /* ── LANGUAGE TOGGLE ── */
+  .lang-toggle {
+    display: flex;
+    background: var(--pale-blue);
+    border-radius: 100px;
+    padding: 3px;
+    gap: 2px;
+  }
+  .lang-btn {
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: transparent;
+    color: var(--steel);
+    letter-spacing: 0.05em;
+  }
+  .lang-btn.active {
+    background: var(--cobalt);
+    color: white;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    transition: all 0.3s;
+  }
+  nav.scrolled {
+    box-shadow: 0 2px 20px rgba(27,79,216,0.08);
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+  .nav-logo-mark {
+    width: 36px; height: 36px;
+    background: var(--cobalt);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 18px;
+    color: white;
+    letter-spacing: -1px;
+  }
+  .nav-logo-text {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--navy);
+    letter-spacing: 0.02em;
+  }
+  .nav-logo-sub {
+    font-family: var(--font-body);
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--steel);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: block;
+    margin-top: -3px;
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--steel);
+    text-decoration: none;
+    transition: color 0.2s;
+    letter-spacing: 0.02em;
+  }
+  .nav-links a:hover { color: var(--cobalt); }
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .btn-nav {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 20px;
+    background: var(--cobalt);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s;
+    letter-spacing: 0.02em;
+  }
+  .btn-nav:hover { background: var(--cobalt-light); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: var(--navy);
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding-top: 64px;
+  }
+  .hero-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(27,79,216,0.12) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(27,79,216,0.12) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-accent {
+    position: absolute;
+    top: 0; right: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(27,79,216,0.2) 0%, transparent 60%);
+    clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+  .hero-number {
+    position: absolute;
+    right: -40px;
+    bottom: -20px;
+    font-family: var(--font-display);
+    font-size: 400px;
+    font-weight: 800;
+    color: rgba(27,79,216,0.06);
+    line-height: 1;
+    user-select: none;
+    pointer-events: none;
+  }
+  .hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 6rem 2rem 5rem;
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(201,168,76,0.15);
+    border: 1px solid rgba(201,168,76,0.4);
+    border-radius: 100px;
+    padding: 6px 16px;
+    margin-bottom: 1.5rem;
+  }
+  .hero-badge-dot {
+    width: 6px; height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+  .hero-badge span {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(48px, 6vw, 80px);
+    font-weight: 800;
+    color: white;
+    line-height: 1;
+    letter-spacing: -1px;
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--cobalt-light);
+  }
+  .hero-sub {
+    font-size: 17px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    max-width: 480px;
+  }
+  .hero-ctas {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 14px 28px;
+    background: var(--cobalt);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+    letter-spacing: 0.02em;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .btn-primary:hover { background: var(--cobalt-light); transform: translateY(-1px); }
+  .btn-secondary {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 14px 28px;
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+    letter-spacing: 0.02em;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .btn-secondary:hover {
+    border-color: rgba(255,255,255,0.6);
+    background: rgba(255,255,255,0.05);
+  }
+  .hero-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .hero-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .hero-card-icon {
+    width: 44px; height: 44px;
+    background: rgba(27,79,216,0.3);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+  .hero-card-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+  .hero-card-value {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: white;
+    font-weight: 500;
+  }
+  .hero-card-badge {
+    margin-left: auto;
+    padding: 3px 10px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  .badge-green {
+    background: rgba(22,163,74,0.2);
+    color: #4ADE80;
+  }
+  .badge-amber {
+    background: rgba(201,168,76,0.2);
+    color: var(--gold);
+  }
+
+  /* ── TRUST BAR ── */
+  .trust-bar {
+    background: var(--pale-blue);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 2rem;
+  }
+  .trust-bar-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--cobalt-mid);
+  }
+  .trust-item-dot {
+    width: 8px; height: 8px;
+    background: var(--cobalt);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ── SECTIONS ── */
+  section { padding: 5rem 2rem; }
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--cobalt);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--cobalt);
+  }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 800;
+    color: var(--navy);
+    line-height: 1.05;
+    letter-spacing: -0.5px;
+    margin-bottom: 1rem;
+  }
+  .section-sub {
+    font-size: 16px;
+    color: var(--steel);
+    line-height: 1.7;
+    max-width: 600px;
+  }
+  .section-header { margin-bottom: 3rem; }
+
+  /* ── ABOUT ── */
+  .about { background: var(--off-white); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .about-stat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .stat-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.25rem;
+    border-left: 4px solid var(--cobalt);
+  }
+  .stat-number {
+    font-family: var(--font-display);
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--navy);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .stat-label {
+    font-size: 12px;
+    color: var(--steel);
+    font-weight: 500;
+    letter-spacing: 0.03em;
+  }
+  .about-visual {
+    background: var(--navy);
+    border-radius: 16px;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .about-visual-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(27,79,216,0.15) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(27,79,216,0.15) 1px, transparent 1px);
+    background-size: 30px 30px;
+    border-radius: 16px;
+  }
+  .about-visual-content { position: relative; z-index: 2; }
+  .about-visual h3 {
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.02em;
+  }
+  .about-visual-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .about-visual-row:last-child { border-bottom: none; }
+  .about-visual-key {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    font-weight: 500;
+    font-family: var(--font-mono);
+    letter-spacing: 0.05em;
+  }
+  .about-visual-val {
+    font-size: 13px;
+    color: white;
+    font-weight: 600;
+  }
+  .about-p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--steel);
+    margin-bottom: 1rem;
+  }
+
+  /* ── SERVICES ── */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .service-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.25s;
+    position: relative;
+    overflow: hidden;
+  }
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 4px;
+    background: var(--cobalt);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+  .service-card:hover {
+    border-color: var(--cobalt);
+    box-shadow: 0 8px 32px rgba(27,79,216,0.1);
+    transform: translateY(-3px);
+  }
+  .service-card:hover::before { transform: scaleX(1); }
+  .service-num {
+    font-family: var(--font-display);
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--cobalt-pale);
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+  .service-icon {
+    font-size: 32px;
+    margin-bottom: 1rem;
+    display: block;
+  }
+  .service-title {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.02em;
+  }
+  .service-desc {
+    font-size: 14px;
+    color: var(--steel);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+  .service-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .tag {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    background: var(--pale-blue);
+    color: var(--cobalt);
+    border-radius: 100px;
+    letter-spacing: 0.03em;
+  }
+
+  /* ── CERTIFICATIONS ── */
+  .certifications { background: var(--navy); }
+  .certifications .section-label { color: var(--gold); }
+  .certifications .section-label::before { background: var(--gold); }
+  .certifications .section-title { color: white; }
+  .certifications .section-sub { color: rgba(255,255,255,0.6); }
+  .cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+  .cert-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.25s;
+  }
+  .cert-card:hover {
+    background: rgba(27,79,216,0.15);
+    border-color: rgba(27,79,216,0.5);
+  }
+  .cert-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+  }
+  .cert-status.active {
+    background: rgba(22,163,74,0.2);
+    color: #4ADE80;
+  }
+  .cert-status.pending {
+    background: rgba(201,168,76,0.15);
+    color: var(--gold);
+  }
+  .cert-status-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+  }
+  .cert-name {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.02em;
+  }
+  .cert-full {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+  .cert-benefit {
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 1rem;
+    line-height: 1.5;
+  }
+
+  /* ── NAICS TABLE ── */
+  .compliance { background: var(--off-white); }
+  .compliance-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+  .compliance-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .compliance-table th {
+    text-align: left;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--cobalt);
+    padding: 0.75rem 1rem;
+    background: var(--pale-blue);
+    border-bottom: 2px solid var(--cobalt);
+  }
+  .compliance-table td {
+    padding: 0.85rem 1rem;
+    font-size: 13px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .compliance-table td:first-child {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    color: var(--cobalt);
+    white-space: nowrap;
+  }
+  .compliance-table td:last-child { color: var(--steel); }
+  .compliance-table tr:last-child td { border-bottom: none; }
+  .id-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+  }
+  .id-card h3 {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.02em;
+  }
+  .id-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border);
+    gap: 1rem;
+  }
+  .id-row:last-child { border-bottom: none; }
+  .id-key {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--steel);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    flex-shrink: 0;
+  }
+  .id-val {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--navy);
+    font-weight: 500;
+    text-align: right;
+  }
+  .id-val.highlight { color: var(--cobalt); }
+
+  /* ── CATALOG ── */
+  .catalog-tabs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+  .tab-btn {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 18px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    cursor: pointer;
+    background: white;
+    color: var(--steel);
+    transition: all 0.2s;
+    letter-spacing: 0.02em;
+  }
+  .tab-btn.active {
+    background: var(--cobalt);
+    color: white;
+    border-color: var(--cobalt);
+  }
+  .tab-btn:hover:not(.active) {
+    border-color: var(--cobalt);
+    color: var(--cobalt);
+  }
+  .catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  .catalog-item {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.25rem;
+    transition: all 0.2s;
+    cursor: default;
+  }
+  .catalog-item:hover {
+    border-color: var(--cobalt);
+    box-shadow: 0 4px 16px rgba(27,79,216,0.08);
+  }
+  .catalog-item-icon {
+    font-size: 28px;
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+  .catalog-item-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+  .catalog-item-code {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--steel);
+  }
+  .catalog-hidden { display: none; }
+
+  /* ── QUOTE FORM ── */
+  .quote { background: var(--pale-blue); }
+  .quote-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .quote-form {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2.5rem;
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .form-group {
+    margin-bottom: 1.25rem;
+  }
+  .form-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--charcoal);
+    margin-bottom: 6px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+  .form-input, .form-select, .form-textarea {
+    width: 100%;
+    font-family: var(--font-body);
+    font-size: 14px;
+    padding: 10px 14px;
+    border: 1px solid var(--border-strong);
+    border-radius: 6px;
+    background: white;
+    color: var(--charcoal);
+    outline: none;
+    transition: border-color 0.2s;
+    appearance: none;
+  }
+  .form-input:focus, .form-select:focus, .form-textarea:focus {
+    border-color: var(--cobalt);
+    box-shadow: 0 0 0 3px rgba(27,79,216,0.1);
+  }
+  .form-textarea { resize: vertical; min-height: 100px; }
+  .btn-submit {
+    width: 100%;
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+    padding: 14px;
+    background: var(--cobalt);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: all 0.2s;
+  }
+  .btn-submit:hover { background: var(--cobalt-light); }
+  .quote-why h3 {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.02em;
+  }
+  .why-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    align-items: flex-start;
+  }
+  .why-icon {
+    width: 40px; height: 40px;
+    background: var(--cobalt);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+    color: white;
+  }
+  .why-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+  .why-desc { font-size: 13px; color: var(--steel); line-height: 1.6; }
+
+  /* ── CONTACT ── */
+  .contact { background: var(--navy); position: relative; overflow: hidden; }
+  .contact-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(27,79,216,0.15) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(27,79,216,0.15) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .contact .section-label { color: var(--gold); }
+  .contact .section-label::before { background: var(--gold); }
+  .contact .section-title { color: white; }
+  .contact-inner { position: relative; z-index: 2; }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .contact-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 2rem;
+  }
+  .contact-card-icon {
+    font-size: 28px;
+    margin-bottom: 1rem;
+  }
+  .contact-card h4 {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.02em;
+  }
+  .contact-card p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.6;
+  }
+  .contact-card a {
+    color: var(--cobalt-light);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #060F1F;
+    padding: 3rem 2rem 2rem;
+    border-top: 1px solid rgba(27,79,216,0.2);
+  }
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .footer-logo {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 800;
+    color: white;
+    letter-spacing: 0.02em;
+  }
+  .footer-sub { font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 4px; }
+  .footer-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  .footer-links a {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: white; }
+  .footer-copy {
+    font-size: 12px;
+    color: rgba(255,255,255,0.3);
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    max-width: 1200px;
+    margin: 2rem auto 0;
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .hero-cards { display: none; }
+    .about-grid, .compliance-grid, .quote-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .form-row { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 52px; }
+  }
+
+  /* ── ANIMATIONS ── */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .stagger-1 { transition-delay: 0.1s; }
+  .stagger-2 { transition-delay: 0.2s; }
+  .stagger-3 { transition-delay: 0.3s; }
+  .stagger-4 { transition-delay: 0.4s; }
+  .stagger-5 { transition-delay: 0.5s; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-mark">S</div>
+      <div>
+        <span class="nav-logo-text">SALEVE</span>
+        <span class="nav-logo-sub">Office & Promo LLC</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about" data-en="About" data-es="Nosotros">About</a></li>
+      <li><a href="#services" data-en="Services" data-es="Servicios">Services</a></li>
+      <li><a href="#certifications" data-en="Certifications" data-es="Certificaciones">Certifications</a></li>
+      <li><a href="#catalog" data-en="Catalog" data-es="Catálogo">Catalog</a></li>
+      <li><a href="#contact" data-en="Contact" data-es="Contacto">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-toggle">
+        <button class="lang-btn active" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" onclick="setLang('es')">ES</button>
+      </div>
+      <a href="#quote" class="btn-nav" data-en="Request Quote" data-es="Cotizar">Request Quote</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-accent"></div>
+  <div class="hero-number">01</div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <div class="hero-badge-dot"></div>
+        <span data-en="SAM.gov Registered · Active" data-es="SAM.gov Registrado · Activo">SAM.gov Registered · Active</span>
+      </div>
+      <h1 data-en="Government <em>Supply</em> Solutions That Deliver" data-es="Soluciones de Suministro <em>Gubernamental</em> que Funcionan">
+        Government <em>Supply</em> Solutions That Deliver
+      </h1>
+      <p class="hero-sub" data-en="New Jersey-based, woman-owned small business specializing in office supplies, janitorial products, and promotional materials for federal, state, and municipal agencies." data-es="Empresa de Nueva Jersey, propiedad femenina, especializada en suministros de oficina, productos de limpieza y materiales promocionales para agencias gubernamentales.">
+        New Jersey-based, woman-owned small business specializing in office supplies, janitorial products, and promotional materials for federal, state, and municipal agencies.
+      </p>
+      <div class="hero-ctas">
+        <a href="#quote" class="btn-primary" data-en="→ Request a Quote" data-es="→ Solicitar Cotización">→ Request a Quote</a>
+        <a href="#services" class="btn-secondary" data-en="Our Services" data-es="Nuestros Servicios">Our Services</a>
+      </div>
+    </div>
+    <div class="hero-cards">
+      <div class="hero-card">
+        <div class="hero-card-icon">🏛️</div>
+        <div>
+          <div class="hero-card-label">SAM.gov Status</div>
+          <div class="hero-card-value">Active Registration</div>
+        </div>
+        <span class="hero-card-badge badge-green">✓ ACTIVE</span>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-icon">🔢</div>
+        <div>
+          <div class="hero-card-label">NAICS Primary</div>
+          <div class="hero-card-value">424120 · 423420</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-icon">🏅</div>
+        <div>
+          <div class="hero-card-label" data-en="Certifications" data-es="Certificaciones">Certifications</div>
+          <div class="hero-card-value">WBE · MBE · WOSB</div>
+        </div>
+        <span class="hero-card-badge badge-amber">IN PROGRESS</span>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-icon">📦</div>
+        <div>
+          <div class="hero-card-label" data-en="Delivery Coverage" data-es="Cobertura">Delivery Coverage</div>
+          <div class="hero-card-value">NJ · NY · PA Metro</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <div class="trust-item"><div class="trust-item-dot"></div><span data-en="Woman-Owned Small Business" data-es="Empresa Propiedad de Mujer">Woman-Owned Small Business</span></div>
+    <div class="trust-item"><div class="trust-item-dot"></div><span data-en="Bilingual Support EN/ES" data-es="Soporte Bilingüe EN/ES">Bilingual Support EN/ES</span></div>
+    <div class="trust-item"><div class="trust-item-dot"></div><span data-en="SAM.gov Registered & Compliant" data-es="Registrada en SAM.gov">SAM.gov Registered & Compliant</span></div>
+    <div class="trust-item"><div class="trust-item-dot"></div><span data-en="Fast NJ/NY Metro Delivery" data-es="Entrega Rápida NJ/NY">Fast NJ/NY Metro Delivery</span></div>
+    <div class="trust-item"><div class="trust-item-dot"></div><span data-en="WBE · MBE · SBA 8(a) Pending" data-es="WBE · MBE · SBA 8(a) En Proceso">WBE · MBE · SBA 8(a) Pending</span></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="fade-up">
+        <div class="section-label" data-en="About Us" data-es="Sobre Nosotros">About Us</div>
+        <h2 class="section-title" data-en="Your Trusted Government Supply Partner" data-es="Tu Socio Confiable de Suministros Gubernamentales">Your Trusted Government Supply Partner</h2>
+        <p class="about-p" data-en="Saleve Office & Promo LLC is a New Jersey-based, woman-owned small business providing reliable, compliant, and cost-effective procurement solutions to government agencies and corporate institutions across the NJ/NY metro area." data-es="Saleve Office & Promo LLC es una empresa de Nueva Jersey, propiedad femenina, que provee soluciones de abastecimiento confiables y rentables a agencias gubernamentales e instituciones corporativas en el área metro de NJ/NY.">
+          Saleve Office & Promo LLC is a New Jersey-based, woman-owned small business providing reliable, compliant, and cost-effective procurement solutions to government agencies and corporate institutions across the NJ/NY metro area.
+        </p>
+        <p class="about-p" data-en="With an active SAM.gov registration, multiple NAICS codes, and bilingual (English/Spanish) customer support, we are uniquely positioned to serve diverse agency needs with speed, quality, and full transparency." data-es="Con registro activo en SAM.gov, múltiples códigos NAICS y soporte bilingüe (inglés/español), estamos posicionados de manera única para servir las necesidades de diversas agencias con rapidez, calidad y total transparencia.">
+          With an active SAM.gov registration, multiple NAICS codes, and bilingual (English/Spanish) customer support, we are uniquely positioned to serve diverse agency needs with speed, quality, and full transparency.
+        </p>
+        <div class="about-stat-grid">
+          <div class="stat-card">
+            <div class="stat-number">5+</div>
+            <div class="stat-label" data-en="NAICS Codes" data-es="Códigos NAICS">NAICS Codes</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">48h</div>
+            <div class="stat-label" data-en="Quote Response Time" data-es="Tiempo de Respuesta">Quote Response Time</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">NJ/NY</div>
+            <div class="stat-label" data-en="Metro Coverage" data-es="Cobertura Metropolitana">Metro Coverage</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">EN/ES</div>
+            <div class="stat-label" data-en="Bilingual Support" data-es="Soporte Bilingüe">Bilingual Support</div>
+          </div>
+        </div>
+      </div>
+      <div class="fade-up stagger-2">
+        <div class="about-visual">
+          <div class="about-visual-grid"></div>
+          <div class="about-visual-content">
+            <h3 data-en="Business Credentials" data-es="Credenciales Empresariales">Business Credentials</h3>
+            <div class="about-visual-row">
+              <span class="about-visual-key">LEGAL_NAME</span>
+              <span class="about-visual-val">Saleve Office & Promo LLC</span>
+            </div>
+            <div class="about-visual-row">
+              <span class="about-visual-key">SAM_STATUS</span>
+              <span class="about-visual-val" style="color:#4ADE80;">✓ ACTIVE</span>
+            </div>
+            <div class="about-visual-row">
+              <span class="about-visual-key">UEI / DUNS</span>
+              <span class="about-visual-val">119477662</span>
+            </div>
+            <div class="about-visual-row">
+              <span class="about-visual-key">NAICS_PRIMARY</span>
+              <span class="about-visual-val">424120</span>
+            </div>
+            <div class="about-visual-row">
+              <span class="about-visual-key">CAGE_CODE</span>
+              <span class="about-visual-val" style="color:#C9A84C;">PENDING</span>
+            </div>
+            <div class="about-visual-row">
+              <span class="about-visual-key">ENTITY_TYPE</span>
+              <span class="about-visual-val">WOSB / SB</span>
+            </div>
+            <div class="about-visual-row">
+              <span class="about-visual-key">LOCATION</span>
+              <span class="about-visual-val">New Jersey, USA</span>
+            </div>
+            <div class="about-visual-row">
+              <span class="about-visual-key">LANGUAGE</span>
+              <span class="about-visual-val">EN / ES</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-inner">
+    <div class="section-header fade-up">
+      <div class="section-label" data-en="Core Competencies" data-es="Competencias Principales">Core Competencies</div>
+      <h2 class="section-title" data-en="What We Supply" data-es="Lo Que Suministramos">What We Supply</h2>
+      <p class="section-sub" data-en="From everyday office essentials to branded promotional items — we source, procure, and deliver what government agencies need." data-es="Desde suministros de oficina hasta materiales promocionales — abastecemos y entregamos lo que las agencias gubernamentales necesitan.">
+        From everyday office essentials to branded promotional items — we source, procure, and deliver what government agencies need.
+      </p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card fade-up stagger-1">
+        <div class="service-num">01</div>
+        <div class="service-title" data-en="Office Supplies & Stationery" data-es="Suministros de Oficina">Office Supplies & Stationery</div>
+        <p class="service-desc" data-en="Complete range of office essentials: paper, pens, binders, folders, envelopes, desk accessories, filing systems, and more." data-es="Gama completa de suministros: papel, bolígrafos, carpetas, sobres, accesorios de escritorio y sistemas de archivo.">
+          Complete range of office essentials: paper, pens, binders, folders, envelopes, desk accessories, filing systems, and more.
+        </p>
+        <div class="service-tags">
+          <span class="tag">NAICS 424120</span>
+          <span class="tag" data-en="Bulk Orders" data-es="Pedidos al Mayor">Bulk Orders</span>
+          <span class="tag" data-en="Fast Delivery" data-es="Entrega Rápida">Fast Delivery</span>
+        </div>
+      </div>
+      <div class="service-card fade-up stagger-2">
+        <div class="service-num">02</div>
+        <div class="service-title" data-en="Janitorial & Cleaning Products" data-es="Productos de Limpieza">Janitorial & Cleaning Products</div>
+        <p class="service-desc" data-en="Industrial cleaning supplies, hygiene products, sanitation equipment, and waste management solutions for institutional facilities." data-es="Productos de limpieza industrial, artículos de higiene, equipos de saneamiento y soluciones de gestión de residuos.">
+          Industrial cleaning supplies, hygiene products, sanitation equipment, and waste management solutions for institutional facilities.
+        </p>
+        <div class="service-tags">
+          <span class="tag">NAICS 561720</span>
+          <span class="tag" data-en="GSA Schedule" data-es="Lista GSA">GSA Schedule</span>
+        </div>
+      </div>
+      <div class="service-card fade-up stagger-3">
+        <div class="service-num">03</div>
+        <div class="service-title" data-en="Promotional & Welcome Kits" data-es="Kits Promocionales">Promotional & Welcome Kits</div>
+        <p class="service-desc" data-en="Custom branded items, employee onboarding kits, agency promotional merchandise, event materials, and corporate gifts." data-es="Artículos con marca personalizada, kits de bienvenida para empleados, merchandising de agencias, materiales para eventos y regalos corporativos.">
+          Custom branded items, employee onboarding kits, agency promotional merchandise, event materials, and corporate gifts.
+        </p>
+        <div class="service-tags">
+          <span class="tag">NAICS 323111</span>
+          <span class="tag" data-en="Custom Branding" data-es="Marca Personalizada">Custom Branding</span>
+        </div>
+      </div>
+      <div class="service-card fade-up stagger-4">
+        <div class="service-num">04</div>
+        <div class="service-title" data-en="Printer & Tech Consumables" data-es="Consumibles de Impresión">Printer & Tech Consumables</div>
+        <p class="service-desc" data-en="Toner cartridges, ink, printer paper, cables, USB peripherals, and office technology accessories for all major brands." data-es="Cartuchos de tóner, tinta, papel para impresora, cables, periféricos USB y accesorios tecnológicos para todas las marcas.">
+          Toner cartridges, ink, printer paper, cables, USB peripherals, and office technology accessories for all major brands.
+        </p>
+        <div class="service-tags">
+          <span class="tag">NAICS 423420</span>
+          <span class="tag" data-en="All Brands" data-es="Todas las Marcas">All Brands</span>
+        </div>
+      </div>
+      <div class="service-card fade-up stagger-5">
+        <div class="service-num">05</div>
+        <div class="service-title" data-en="Institutional Procurement Support" data-es="Soporte de Adquisiciones">Institutional Procurement Support</div>
+        <p class="service-desc" data-en="End-to-end supply chain management, bulk sourcing, catalog maintenance, and procurement consulting for government agencies." data-es="Gestión integral de la cadena de suministro, abastecimiento a granel, mantenimiento de catálogos y consultoría de adquisiciones.">
+          End-to-end supply chain management, bulk sourcing, catalog maintenance, and procurement consulting for government agencies.
+        </p>
+        <div class="service-tags">
+          <span class="tag" data-en="RFQ Response" data-es="Respuesta RFQ">RFQ Response</span>
+          <span class="tag" data-en="Compliant" data-es="Cumplidor">Compliant</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="certifications" id="certifications">
+  <div class="section-inner">
+    <div class="section-header fade-up">
+      <div class="section-label" data-en="Compliance & Credentials" data-es="Cumplimiento y Credenciales">Compliance & Credentials</div>
+      <h2 class="section-title" data-en="Certifications & Set-Asides" data-es="Certificaciones y Set-Asides">Certifications & Set-Asides</h2>
+      <p class="section-sub" data-en="We are actively pursuing all major small business certifications to maximize contracting opportunities with federal, state, and local government agencies." data-es="Estamos gestionando activamente todas las principales certificaciones de pequeñas empresas para maximizar las oportunidades con agencias gubernamentales.">
+        We are actively pursuing all major small business certifications to maximize contracting opportunities with federal, state, and local government agencies.
+      </p>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-card fade-up stagger-1">
+        <div class="cert-status active"><div class="cert-status-dot"></div><span>ACTIVE</span></div>
+        <div class="cert-name">SAM.gov</div>
+        <div class="cert-full" data-en="System for Award Management — Federal Registration" data-es="Sistema de Gestión de Adjudicaciones — Registro Federal">System for Award Management — Federal Registration</div>
+        <div class="cert-benefit" data-en="Required for all federal contracts. Active and compliant registration enables participation in all federal procurement opportunities." data-es="Requerido para todos los contratos federales. Registro activo y cumplidor.">Required for all federal contracts. Active and compliant registration enables participation in all federal procurement opportunities.</div>
+      </div>
+      <div class="cert-card fade-up stagger-2">
+        <div class="cert-status pending"><div class="cert-status-dot"></div><span data-en="IN PROGRESS" data-es="EN PROCESO">IN PROGRESS</span></div>
+        <div class="cert-name">WBE</div>
+        <div class="cert-full" data-en="Women's Business Enterprise — NJ Division of Revenue" data-es="Empresa Propiedad de Mujer — División de Ingresos de NJ">Women's Business Enterprise — NJ Division of Revenue</div>
+        <div class="cert-benefit" data-en="Opens access to state set-aside contracts and supplier diversity programs across NJ government agencies." data-es="Abre acceso a contratos reservados estatales y programas de diversidad de proveedores.">Opens access to state set-aside contracts and supplier diversity programs across NJ government agencies.</div>
+      </div>
+      <div class="cert-card fade-up stagger-3">
+        <div class="cert-status pending"><div class="cert-status-dot"></div><span data-en="IN PROGRESS" data-es="EN PROCESO">IN PROGRESS</span></div>
+        <div class="cert-name">MBE</div>
+        <div class="cert-full" data-en="Minority Business Enterprise — NJ Division of Revenue" data-es="Empresa Propiedad de Minoría — División de Ingresos de NJ">Minority Business Enterprise — NJ Division of Revenue</div>
+        <div class="cert-benefit" data-en="Qualifies for minority set-aside contracts and supplier diversity spend targets at state and local agencies." data-es="Califica para contratos reservados a minorías y objetivos de gasto de diversidad de proveedores.">Qualifies for minority set-aside contracts and supplier diversity spend targets at state and local agencies.</div>
+      </div>
+      <div class="cert-card fade-up stagger-4">
+        <div class="cert-status pending"><div class="cert-status-dot"></div><span data-en="IN PROGRESS" data-es="EN PROCESO">IN PROGRESS</span></div>
+        <div class="cert-name">WBENC</div>
+        <div class="cert-full" data-en="Women's Business Enterprise National Council — National Certification" data-es="Consejo Nacional de Empresas Propiedad de Mujeres">Women's Business Enterprise National Council — National Certification</div>
+        <div class="cert-benefit" data-en="Gold standard for corporate supplier diversity. Recognized by Fortune 500 companies and federal agencies nationwide." data-es="Estándar para diversidad de proveedores corporativos. Reconocido por empresas Fortune 500 y agencias federales.">Gold standard for corporate supplier diversity. Recognized by Fortune 500 companies and federal agencies nationwide.</div>
+      </div>
+      <div class="cert-card fade-up stagger-5">
+        <div class="cert-status pending"><div class="cert-status-dot"></div><span data-en="PENDING" data-es="PENDIENTE">PENDING</span></div>
+        <div class="cert-name">SBA 8(a)</div>
+        <div class="cert-full" data-en="SBA 8(a) Business Development Program — Federal" data-es="Programa de Desarrollo Empresarial SBA 8(a) — Federal">SBA 8(a) Business Development Program — Federal</div>
+        <div class="cert-benefit" data-en="Access to sole-source contracts up to $4.5M. Enables direct awards without competitive bidding from federal agencies." data-es="Acceso a contratos de fuente única hasta $4.5M. Adjudicaciones directas sin licitación competitiva de agencias federales.">Access to sole-source contracts up to $4.5M. Enables direct awards without competitive bidding from federal agencies.</div>
+      </div>
+      <div class="cert-card fade-up stagger-1">
+        <div class="cert-status pending"><div class="cert-status-dot"></div><span data-en="IN PROGRESS" data-es="EN PROCESO">IN PROGRESS</span></div>
+        <div class="cert-name">SBE / SDB</div>
+        <div class="cert-full" data-en="Small Business Enterprise / Small Disadvantaged Business" data-es="Pequeña Empresa / Empresa en Desventaja">Small Business Enterprise / Small Disadvantaged Business</div>
+        <div class="cert-benefit" data-en="NJ state certification providing priority consideration for small business set-aside contracts at county and municipal level." data-es="Certificación estatal de NJ con consideración prioritaria para contratos reservados a pequeñas empresas.">NJ state certification providing priority consideration for small business set-aside contracts at county and municipal level.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPLIANCE / NAICS -->
+<section class="compliance" id="compliance">
+  <div class="section-inner">
+    <div class="section-header fade-up">
+      <div class="section-label" data-en="Business Identity" data-es="Identidad Empresarial">Business Identity</div>
+      <h2 class="section-title" data-en="NAICS Codes & Business IDs" data-es="Códigos NAICS e IDs Empresariales">NAICS Codes & Business IDs</h2>
+    </div>
+    <div class="compliance-grid fade-up">
+      <div>
+        <table class="compliance-table">
+          <thead>
+            <tr>
+              <th data-en="NAICS Code" data-es="Código NAICS">NAICS Code</th>
+              <th data-en="Description" data-es="Descripción">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>424120</td>
+              <td data-en="Stationery & Office Supplies Merchant Wholesalers" data-es="Mayoristas de Artículos de Papelería y Oficina">Stationery & Office Supplies Merchant Wholesalers</td>
+            </tr>
+            <tr>
+              <td>423420</td>
+              <td data-en="Office Equipment Merchant Wholesalers" data-es="Mayoristas de Equipos de Oficina">Office Equipment Merchant Wholesalers</td>
+            </tr>
+            <tr>
+              <td>561720</td>
+              <td data-en="Janitorial Services" data-es="Servicios de Limpieza y Mantenimiento">Janitorial Services</td>
+            </tr>
+            <tr>
+              <td>323111</td>
+              <td data-en="Commercial Printing — Promotional Materials" data-es="Impresión Comercial — Materiales Promocionales">Commercial Printing — Promotional Materials</td>
+            </tr>
+            <tr>
+              <td>453210</td>
+              <td data-en="Office Supplies & Stationery Retail" data-es="Venta al Por Menor de Artículos de Oficina">Office Supplies & Stationery Retail</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="id-card">
+        <h3 data-en="Procurement Identifiers" data-es="Identificadores de Adquisición">Procurement Identifiers</h3>
+        <div class="id-row">
+          <span class="id-key">Legal Name</span>
+          <span class="id-val">Saleve Office & Promo LLC</span>
+        </div>
+        <div class="id-row">
+          <span class="id-key">UEI / DUNS</span>
+          <span class="id-val highlight">119477662</span>
+        </div>
+        <div class="id-row">
+          <span class="id-key">SAM.gov</span>
+          <span class="id-val highlight">✓ Active</span>
+        </div>
+        <div class="id-row">
+          <span class="id-key">CAGE Code</span>
+          <span class="id-val">Pending</span>
+        </div>
+        <div class="id-row">
+          <span class="id-key">Entity Type</span>
+          <span class="id-val">WOSB · LLC</span>
+        </div>
+        <div class="id-row">
+          <span class="id-key">State</span>
+          <span class="id-val">New Jersey, USA</span>
+        </div>
+        <div class="id-row">
+          <span class="id-key">Email</span>
+          <span class="id-val highlight">info@saleve-gov.com</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATALOG -->
+<section id="catalog">
+  <div class="section-inner">
+    <div class="section-header fade-up">
+      <div class="section-label" data-en="Product Catalog" data-es="Catálogo de Productos">Product Catalog</div>
+      <h2 class="section-title" data-en="Browse Our Products" data-es="Explora Nuestros Productos">Browse Our Products</h2>
+      <p class="section-sub" data-en="A selection of the products we supply to government agencies. Contact us for full catalog and bulk pricing." data-es="Una selección de los productos que suministramos a agencias gubernamentales. Contáctanos para el catálogo completo y precios al mayor.">
+        A selection of the products we supply to government agencies. Contact us for full catalog and bulk pricing.
+      </p>
+    </div>
+    <div class="catalog-tabs fade-up">
+      <button class="tab-btn active" onclick="filterCatalog('all')" data-en="All Products" data-es="Todos">All Products</button>
+      <button class="tab-btn" onclick="filterCatalog('office')" data-en="Office Supplies" data-es="Oficina">Office Supplies</button>
+      <button class="tab-btn" onclick="filterCatalog('cleaning')" data-en="Janitorial" data-es="Limpieza">Janitorial</button>
+      <button class="tab-btn" onclick="filterCatalog('promo')" data-en="Promotional" data-es="Promocional">Promotional</button>
+      <button class="tab-btn" onclick="filterCatalog('tech')" data-en="Tech & Print" data-es="Tecnología">Tech & Print</button>
+    </div>
+    <div class="catalog-grid fade-up" id="catalog-grid">
+      <div class="catalog-item" data-cat="office"><span class="catalog-item-icon">📋</span><div class="catalog-item-name" data-en="Copy Paper — Bulk" data-es="Papel de Copia — Mayor">Copy Paper — Bulk</div><div class="catalog-item-code">PSC: 7530</div></div>
+      <div class="catalog-item" data-cat="office"><span class="catalog-item-icon">🖊️</span><div class="catalog-item-name" data-en="Pens & Markers" data-es="Bolígrafos y Marcadores">Pens & Markers</div><div class="catalog-item-code">PSC: 7510</div></div>
+      <div class="catalog-item" data-cat="office"><span class="catalog-item-icon">📁</span><div class="catalog-item-name" data-en="Folders & Binders" data-es="Carpetas y Archivadores">Folders & Binders</div><div class="catalog-item-code">PSC: 7530</div></div>
+      <div class="catalog-item" data-cat="office"><span class="catalog-item-icon">✂️</span><div class="catalog-item-name" data-en="Desk Accessories" data-es="Accesorios de Escritorio">Desk Accessories</div><div class="catalog-item-code">PSC: 7510</div></div>
+      <div class="catalog-item" data-cat="office"><span class="catalog-item-icon">📮</span><div class="catalog-item-name" data-en="Envelopes & Mailers" data-es="Sobres y Envíos">Envelopes & Mailers</div><div class="catalog-item-code">PSC: 7530</div></div>
+      <div class="catalog-item" data-cat="office"><span class="catalog-item-icon">🗂️</span><div class="catalog-item-name" data-en="Filing Systems" data-es="Sistemas de Archivo">Filing Systems</div><div class="catalog-item-code">PSC: 7195</div></div>
+      <div class="catalog-item" data-cat="cleaning"><span class="catalog-item-icon">🧹</span><div class="catalog-item-name" data-en="Floor Cleaning Supplies" data-es="Limpieza de Pisos">Floor Cleaning Supplies</div><div class="catalog-item-code">PSC: 7930</div></div>
+      <div class="catalog-item" data-cat="cleaning"><span class="catalog-item-icon">🧴</span><div class="catalog-item-name" data-en="Hand Sanitizers & Soap" data-es="Sanitizantes y Jabón">Hand Sanitizers & Soap</div><div class="catalog-item-code">PSC: 6840</div></div>
+      <div class="catalog-item" data-cat="cleaning"><span class="catalog-item-icon">🗑️</span><div class="catalog-item-name" data-en="Waste Management" data-es="Gestión de Residuos">Waste Management</div><div class="catalog-item-code">PSC: 7930</div></div>
+      <div class="catalog-item" data-cat="cleaning"><span class="catalog-item-icon">🧻</span><div class="catalog-item-name" data-en="Paper Towels & Tissue" data-es="Toallas y Papel">Paper Towels & Tissue</div><div class="catalog-item-code">PSC: 8110</div></div>
+      <div class="catalog-item" data-cat="promo"><span class="catalog-item-icon">👕</span><div class="catalog-item-name" data-en="Branded Apparel" data-es="Ropa con Marca">Branded Apparel</div><div class="catalog-item-code">PSC: 8405</div></div>
+      <div class="catalog-item" data-cat="promo"><span class="catalog-item-icon">🎁</span><div class="catalog-item-name" data-en="Welcome Kits" data-es="Kits de Bienvenida">Welcome Kits</div><div class="catalog-item-code">PSC: 7510</div></div>
+      <div class="catalog-item" data-cat="promo"><span class="catalog-item-icon">🖨️</span><div class="catalog-item-name" data-en="Printed Materials" data-es="Materiales Impresos">Printed Materials</div><div class="catalog-item-code">PSC: 9905</div></div>
+      <div class="catalog-item" data-cat="promo"><span class="catalog-item-icon">🏷️</span><div class="catalog-item-name" data-en="Event Banners & Signage" data-es="Banners y Señalización">Event Banners & Signage</div><div class="catalog-item-code">PSC: 9905</div></div>
+      <div class="catalog-item" data-cat="tech"><span class="catalog-item-icon">🖨️</span><div class="catalog-item-name" data-en="Toner & Ink Cartridges" data-es="Tóner y Cartuchos">Toner & Ink Cartridges</div><div class="catalog-item-code">PSC: 7045</div></div>
+      <div class="catalog-item" data-cat="tech"><span class="catalog-item-icon">💾</span><div class="catalog-item-name" data-en="USB & Storage Media" data-es="USB y Almacenamiento">USB & Storage Media</div><div class="catalog-item-code">PSC: 7045</div></div>
+      <div class="catalog-item" data-cat="tech"><span class="catalog-item-icon">🖥️</span><div class="catalog-item-name" data-en="Monitor & Peripherals" data-es="Monitores y Periféricos">Monitor & Peripherals</div><div class="catalog-item-code">PSC: 7021</div></div>
+      <div class="catalog-item" data-cat="tech"><span class="catalog-item-icon">🔌</span><div class="catalog-item-name" data-en="Cables & Adapters" data-es="Cables y Adaptadores">Cables & Adapters</div><div class="catalog-item-code">PSC: 6145</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE FORM -->
+<section class="quote" id="quote">
+  <div class="section-inner">
+    <div class="quote-grid">
+      <div class="fade-up">
+        <div class="section-label" data-en="Get Started" data-es="Empecemos">Get Started</div>
+        <h2 class="section-title" data-en="Request a Quote" data-es="Solicitar Cotización">Request a Quote</h2>
+        <form class="quote-form" action="https://formspree.io/f/xyekkngv" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="quote-first_name" data-en="First Name" data-es="Nombre">First Name</label>
+              <input id="quote-first_name" name="first_name" required type="text" class="form-input" placeholder="Jane" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="quote-last_name" data-en="Last Name" data-es="Apellido">Last Name</label>
+              <input id="quote-last_name" name="last_name" required type="text" class="form-input" placeholder="Smith" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="quote-organization" data-en="Agency / Organization" data-es="Agencia / Organización">Agency / Organization</label>
+            <input id="quote-organization" name="organization" required type="text" class="form-input" placeholder="e.g. County of Ocean, NJ" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="quote-email" data-en="Email Address" data-es="Correo Electrónico">Email Address</label>
+            <input id="quote-email" name="email" required type="email" class="form-input" placeholder="jane@agency.gov" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="quote-phone" data-en="Phone Number" data-es="Teléfono">Phone Number</label>
+            <input id="quote-phone" name="phone" type="tel" class="form-input" placeholder="+1 (555) 000-0000" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="quote-category" data-en="Product Category" data-es="Categoría de Producto">Product Category</label>
+            <select id="quote-category" name="category" required class="form-select">
+              <option value="" data-en="Select a category..." data-es="Selecciona una categoría...">Select a category...</option>
+              <option value="office_supplies" data-en="Office Supplies & Stationery" data-es="Suministros de Oficina">Office Supplies & Stationery</option>
+              <option value="janitorial" data-en="Janitorial & Cleaning" data-es="Limpieza y Mantenimiento">Janitorial & Cleaning</option>
+              <option value="promotional" data-en="Promotional Materials" data-es="Materiales Promocionales">Promotional Materials</option>
+              <option value="technology" data-en="Printer & Tech Consumables" data-es="Consumibles Tecnológicos">Printer & Tech Consumables</option>
+              <option value="multiple" data-en="Multiple Categories" data-es="Múltiples Categorías">Multiple Categories</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="quote-contract_reference" data-en="Contract / Bid Reference (optional)" data-es="Referencia de Contrato / Licitación (opcional)">Contract / Bid Reference (optional)</label>
+            <input id="quote-contract_reference" name="contract_reference" type="text" class="form-input" placeholder="e.g. RFQ-2026-0042 / SAM Opportunity ID" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="quote-message" data-en="Project Description" data-es="Descripción del Proyecto">Project Description</label>
+            <textarea id="quote-message" name="message" required class="form-textarea" placeholder="Describe the products needed, quantities, delivery timeline, and any special requirements..."></textarea>
+          </div>
+          <button type="submit" class="btn-submit" data-en="SUBMIT REQUEST →" data-es="ENVIAR SOLICITUD →">SUBMIT REQUEST →</button>
+        <p class="form-status" role="status" aria-live="polite" hidden></p>
+        </form>
+      </div>
+      <div class="quote-why fade-up stagger-2">
+        <h3 data-en="Why Choose Saleve?" data-es="¿Por Qué Elegir Saleve?">Why Choose Saleve?</h3>
+        <div class="why-item">
+          <div class="why-icon">⚡</div>
+          <div>
+            <div class="why-title" data-en="48-Hour Quote Response" data-es="Respuesta en 48 Horas">48-Hour Quote Response</div>
+            <div class="why-desc" data-en="We respond to all RFQ requests within 48 business hours with competitive pricing and full product availability confirmation." data-es="Respondemos todas las solicitudes de cotización en 48 horas hábiles con precios competitivos.">We respond to all RFQ requests within 48 business hours with competitive pricing and full product availability confirmation.</div>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">🌐</div>
+          <div>
+            <div class="why-title" data-en="Bilingual Communication" data-es="Comunicación Bilingüe">Bilingual Communication</div>
+            <div class="why-desc" data-en="Full procurement support in English and Spanish — from initial quote to delivery confirmation and invoicing." data-es="Soporte completo en inglés y español — desde la cotización hasta la confirmación de entrega y facturación.">Full procurement support in English and Spanish — from initial quote to delivery confirmation and invoicing.</div>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">✅</div>
+          <div>
+            <div class="why-title" data-en="SAM.gov Compliant" data-es="Cumplidor con SAM.gov">SAM.gov Compliant</div>
+            <div class="why-desc" data-en="Active registration ensures smooth procurement processing. All federal invoicing and payment requirements fully met." data-es="Registro activo garantiza procesamiento de adquisiciones sin problemas. Todos los requisitos federales cumplidos.">Active registration ensures smooth procurement processing. All federal invoicing and payment requirements fully met.</div>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">📦</div>
+          <div>
+            <div class="why-title" data-en="Flexible Fulfillment" data-es="Cumplimiento Flexible">Flexible Fulfillment</div>
+            <div class="why-desc" data-en="Single orders, recurring supply contracts, or emergency procurement — we adapt to agency needs and timelines." data-es="Pedidos únicos, contratos recurrentes o adquisiciones de emergencia — nos adaptamos a las necesidades de la agencia.">Single orders, recurring supply contracts, or emergency procurement — we adapt to agency needs and timelines.</div>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">🏅</div>
+          <div>
+            <div class="why-title" data-en="Diversity-Certified (In Progress)" data-es="Certificación de Diversidad (En Proceso)">Diversity-Certified (In Progress)</div>
+            <div class="why-desc" data-en="WBE, MBE, and SBA 8(a) certifications in progress — helping agencies meet their supplier diversity spend goals." data-es="Certificaciones WBE, MBE y SBA 8(a) en proceso — ayudando a agencias a cumplir sus metas de diversidad de proveedores.">WBE, MBE, and SBA 8(a) certifications in progress — helping agencies meet their supplier diversity spend goals.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-grid-bg"></div>
+  <div class="section-inner contact-inner">
+    <div class="section-header fade-up">
+      <div class="section-label" data-en="Get In Touch" data-es="Contáctanos">Get In Touch</div>
+      <h2 class="section-title" data-en="Ready to Work Together" data-es="Listos para Trabajar Juntos">Ready to Work Together</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card fade-up stagger-1">
+        <div class="contact-card-icon">📧</div>
+        <h4 data-en="Email" data-es="Correo">Email</h4>
+        <p><a href="mailto:info@saleve-gov.com">info@saleve-gov.com</a><br/><span data-en="Response within 24–48 hours" data-es="Respuesta en 24–48 horas">Response within 24–48 hours</span></p>
+      </div>
+      <div class="contact-card fade-up stagger-2">
+        <div class="contact-card-icon">📍</div>
+        <h4 data-en="Location" data-es="Ubicación">Location</h4>
+        <p data-en="New Jersey, United States<br/>Serving NJ · NY · PA Metro Area" data-es="Nueva Jersey, Estados Unidos<br/>Servicio en NJ · NY · PA">New Jersey, United States<br/>Serving NJ · NY · PA Metro Area</p>
+      </div>
+      <div class="contact-card fade-up stagger-3">
+        <div class="contact-card-icon">🏛️</div>
+        <h4>SAM.gov</h4>
+        <p data-en="Search <strong>Saleve Office & Promo LLC</strong> or DUNS 119477662 to verify our active registration and request capability statement." data-es="Busca <strong>Saleve Office & Promo LLC</strong> o DUNS 119477662 para verificar nuestro registro activo.">Search <strong>Saleve Office & Promo LLC</strong> or DUNS 119477662 to verify our active registration and request capability statement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">SALEVE OFFICE & PROMO LLC</div>
+      <div class="footer-sub" data-en="Government Supply Solutions · New Jersey, USA" data-es="Soluciones de Suministro Gubernamental · Nueva Jersey, EE.UU.">Government Supply Solutions · New Jersey, USA</div>
+    </div>
+    <ul class="footer-links">
+      <li><a href="#services" data-en="Services" data-es="Servicios">Services</a></li>
+      <li><a href="#certifications" data-en="Certifications" data-es="Certificaciones">Certifications</a></li>
+      <li><a href="#catalog" data-en="Catalog" data-es="Catálogo">Catalog</a></li>
+      <li><a href="#quote" data-en="Quote" data-es="Cotizar">Quote</a></li>
+    </ul>
+  </div>
+  <div class="footer-copy" data-en="© 2026 Saleve Office & Promo LLC · SAM.gov Active · NAICS 424120 · info@saleve-gov.com" data-es="© 2026 Saleve Office & Promo LLC · SAM.gov Activo · NAICS 424120 · info@saleve-gov.com">
+    © 2026 Saleve Office & Promo LLC · SAM.gov Active · NAICS 424120 · info@saleve-gov.com
+  </div>
+</footer>
+
+<script>
+  // ── LANGUAGE ──
+  let currentLang = 'en';
+
+  function setLang(lang) {
+    currentLang = lang;
+    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      if (btn.textContent.toLowerCase() === lang) btn.classList.add('active');
+    });
+    document.querySelectorAll('[data-en]').forEach(el => {
+      const text = el.getAttribute('data-' + lang);
+      if (text) {
+        if (el.querySelector('em') && lang === 'en') {
+          el.innerHTML = text;
+        } else if (el.getAttribute('data-en') && el.getAttribute('data-en').includes('<em>')) {
+          el.innerHTML = text;
+        } else {
+          el.innerHTML = text;
+        }
+      }
+    });
+    document.documentElement.lang = lang;
+  }
+
+  // ── NAV SCROLL ──
+  window.addEventListener('scroll', () => {
+    document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // ── CATALOG FILTER ──
+  function filterCatalog(cat) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
+    document.querySelectorAll('.catalog-item').forEach(item => {
+      if (cat === 'all' || item.dataset.cat === cat) {
+        item.style.display = '';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+
+  // ── SCROLL ANIMATIONS ──
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // ── SMOOTH ANCHOR ──
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const href = a.getAttribute('href');
+      if (href === '#') {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
+      const target = document.getElementById(href.slice(1));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // ── FORM SUBMIT ──
+  const quoteForm = document.querySelector('.quote-form');
+  const submitButton = quoteForm.querySelector('.btn-submit');
+  const formStatus = quoteForm.querySelector('.form-status');
+  let sendingQuote = false;
+
+  quoteForm.addEventListener('submit', async e => {
+    e.preventDefault();
+    if (sendingQuote) return;
+    formStatus.hidden = true;
+    quoteForm.querySelectorAll('[required]').forEach(field => {
+      field.setCustomValidity(field.value.trim() ? '' :
+        (currentLang === 'en' ? 'Please complete this field.' : 'Completa este campo.'));
+    });
+    if (!quoteForm.reportValidity()) return;
+
+    sendingQuote = true;
+    submitButton.disabled = true;
+    quoteForm.setAttribute('aria-busy', 'true');
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 20000);
+    try {
+      const response = await fetch(quoteForm.action, {
+        method: 'POST',
+        body: new FormData(quoteForm),
+        headers: { 'Accept': 'application/json' },
+        signal: controller.signal
+      });
+      // HTTP status determines acceptance; successful responses need not
+      // contain an `ok` property or a JSON body.
+      if (!response.ok) {
+        const result = await response.json().catch(() => null);
+        const details = Array.isArray(result?.errors)
+          ? result.errors.map(error => error.message).filter(Boolean).join(' ')
+          : (typeof result?.error === 'string' ? result.error : '');
+        const error = new Error(details || `HTTP ${response.status}`);
+        error.status = response.status;
+        throw error;
+      }
+      quoteForm.reset();
+      formStatus.textContent = currentLang === 'en'
+        ? '✓ REQUEST SENT!' : '✓ ¡SOLICITUD ENVIADA!';
+    } catch (error) {
+      // Keep diagnostic information without logging submitted personal data.
+      console.error('Quote submission failed:', error);
+      formStatus.textContent = currentLang === 'en'
+        ? 'We could not confirm your request was sent. Please try again.'
+        : 'No pudimos confirmar el envío de tu solicitud. Inténtalo de nuevo.';
+      if (error.status) {
+        formStatus.textContent += ` (${error.message})`;
+      }
+    } finally {
+      clearTimeout(timeout);
+      sendingQuote = false;
+      submitButton.disabled = false;
+      quoteForm.removeAttribute('aria-busy');
+      formStatus.hidden = false;
+    }
+  });
+  quoteForm.addEventListener('input', e => {
+    if (typeof e.target.setCustomValidity === 'function') e.target.setCustomValidity('');
+    if (!sendingQuote) formStatus.hidden = true;
+  });
+
+</script>
+</body>
+</html>
