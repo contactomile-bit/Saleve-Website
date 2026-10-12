@@ -1036,6 +1036,18 @@
     .hero-badge span { font-size: 10px; letter-spacing: 0; }
   }
 
+  /* Mobile heading: wrap at word boundaries without automatic hyphens */
+  @media (max-width: 768px) {
+    .hero h1, .hero h1 span {
+      font-size: clamp(28px, 7vw, 36px);
+      overflow-wrap: normal;
+      word-break: normal;
+      hyphens: none;
+      -webkit-hyphens: none;
+    }
+    .hero h1 { max-width: 100%; line-height: 1.14; }
+  }
+
   /* ── ANIMATIONS ── */
   .fade-up {
     opacity: 0;
