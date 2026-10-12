@@ -994,6 +994,29 @@
     .hero h1 { font-size: 52px; }
   }
 
+  /* Mobile layout fixes: keep all content inside the viewport */
+  @media (max-width: 768px) {
+    .nav-inner { padding: 0 14px; gap: 10px; min-width: 0; }
+    .nav-logo { min-width: 0; flex: 0 1 auto; }
+    .nav-logo img { width: min(34vw, 155px) !important; max-width: 100% !important; height: auto !important; }
+    .nav-right { gap: 8px; flex: 0 0 auto; }
+    .lang-toggle { flex-shrink: 0; }
+    .btn-nav { padding: 9px 11px; font-size: 12px; white-space: nowrap; }
+    .hero-inner { padding: 5rem 18px 3rem; min-width: 0; }
+    .hero-content { min-width: 0; }
+    .hero h1 { font-size: clamp(34px, 9vw, 52px); overflow-wrap: anywhere; hyphens: auto; }
+    .hero-sub { font-size: 15px; overflow-wrap: break-word; }
+    .hero-ctas { flex-wrap: wrap; gap: 12px; }
+    .hero-ctas a { max-width: 100%; text-align: center; }
+  }
+  @media (max-width: 390px) {
+    .nav-inner { padding: 0 10px; gap: 6px; }
+    .nav-logo img { width: 30vw !important; }
+    .nav-right { gap: 5px; }
+    .btn-nav { padding: 8px; font-size: 11px; }
+    .hero h1 { font-size: 34px; }
+  }
+
   /* ── ANIMATIONS ── */
   .fade-up {
     opacity: 0;
